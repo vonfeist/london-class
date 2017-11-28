@@ -10,6 +10,7 @@ export class VideoListComponent implements OnInit {
 	videoList = videos;
 	currentVideo;
 	isCurrent:boolean;
+	selectedVideo;
 
 	constructor() {
 	}
@@ -19,6 +20,10 @@ export class VideoListComponent implements OnInit {
 	}
 	setVideo(vid){
 		this.currentVideo = vid;
+	}
+
+	onSelectVideo(video){
+		this.selectedVideo=video;
 	}
 
 
