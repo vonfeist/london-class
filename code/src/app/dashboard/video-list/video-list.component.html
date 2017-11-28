@@ -1,3 +1,10 @@
-<p>
-  video-list works!
-</p>
+<h2>
+    My awesome video's
+</h2>
+<ul class="list-group">
+    <app-video-component
+            *ngFor="let video of videoList"
+            (click)="currentVideo = video"
+            [video]="video"
+            [isCurrent]="video === currentVideo"></app-video-component>
+</ul>
