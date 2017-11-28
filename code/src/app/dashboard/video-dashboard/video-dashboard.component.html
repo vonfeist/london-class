@@ -1,5 +1,24 @@
-<p>
-  video-dashboard works!
-</p>
-<app-video-list ></app-video-list>
+<div class="row">
+    <h2>
+        My awesome video's
+    </h2>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <app-video-list (selectVideo)="onSelectVideo($event)"></app-video-list>
+    </div>
+    <div class="col-md-4">
+        <!--Central column with prospective video player-->
+        <app-video-player
+                *ngIf="selectedVideo"
+                [selectedVideo]="selectedVideo">
+        </app-video-player>
+        <!--div is shown if no video is selected yet-->
+        <div *ngIf="!selectedVideo">Please select a video...</div>
+    </div>
+    <div class="col-md-4">
+        <!--Column with stats-->
+        <app-stat-filters></app-stat-filters>
+    </div>
+</div>
 

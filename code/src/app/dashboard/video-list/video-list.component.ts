@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 import {videos} from '../shared/videos';
 
@@ -7,6 +7,8 @@ import {videos} from '../shared/videos';
 	templateUrl: './video-list.component.html'
 })
 export class VideoListComponent implements OnInit {
+
+	@Output() selectVideo:EventEmitter<any> = new EventEmitter<any>()
 	videoList = videos;
 	currentVideo;
 	isCurrent:boolean;
@@ -24,6 +26,7 @@ export class VideoListComponent implements OnInit {
 
 	onSelectVideo(video){
 		this.selectedVideo=video;
+		this.selectVideo.emit(video)
 	}
 
 

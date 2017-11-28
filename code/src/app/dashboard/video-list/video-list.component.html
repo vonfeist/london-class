@@ -1,7 +1,5 @@
-<h2>
-    My awesome video's
-</h2>
 <ul class="list-group">
+    <!--Column with list of videos-->
     <app-video-component
             *ngFor="let video of videoList"
             (click)="currentVideo = video"
@@ -11,6 +9,4 @@
     </app-video-component>
 </ul>
 
-<app-video-player
-        *ngIf="selectedVideo"
-        [selectedVideo]="selectedVideo"></app-video-player>
+
